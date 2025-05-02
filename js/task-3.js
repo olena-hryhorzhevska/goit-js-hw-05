@@ -1,56 +1,81 @@
-// prettier-ignore
-const profile = {
-  username: "Jacob",
-  playTime: 300,
-  changeUsername(newName) {
-    this.username = newName;
-  },
-  updatePlayTime(hours) {
-    this.playTime += hours;
-  },
-  getInfo() {
-    return `${this.username} has ${this.playTime} active hours!`;
-  },
-};
+let sortByDescendingFriendCount = (users) => {
+  return users.toSorted((a, b) => b.friends.length - a.friends.length)
+}
 
-console.log(profile.getInfo()); // "Jacob has 300 active hours!"
 
-profile.changeUsername("Marco");
-console.log(profile.getInfo()); // "Marco has 300 active hours!"
-
-profile.updatePlayTime(20);
-console.log(profile.getInfo()); // "Marco has 320 active hours!"
-
-// const profile = {
-//   username: "Jacob",
-//   playTime: 300,
-//   changeUsername(newName) {
-//     this.username = newName;
+console.log(
+  sortByDescendingFriendCount([
+    {
+      name: "Moore Hensley",
+      friends: ["Sharron Pace"],
+      gender: "male"
+    },
+    {
+      name: "Sharlene Bush",
+      friends: ["Briana Decker", "Sharron Pace"],
+      gender: "female"
+    },
+    {
+      name: "Ross Vazquez",
+      friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+      gender: "male"
+    },
+    {
+      name: "Elma Head",
+      friends: ["Goldie Gentry", "Aisha Tran"],
+      gender: "female"
+    },
+    {
+      name: "Carey Barr",
+      friends: ["Jordan Sampson", "Eddie Strong"],
+      gender: "male"
+    },
+    {
+      name: "Blackburn Dotson",
+      friends: ["Jacklyn Lucas", "Linda Chapman"],
+      gender: "male"
+    },
+    {
+      name: "Sheree Anthony",
+      friends: ["Goldie Gentry", "Briana Decker"],
+      gender: "female"
+    }
+  ])
+);
+// [
+//   {
+//     name: "Ross Vazquez",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     gender: "male"
 //   },
-//   updatePlayTime(hours) {
-//     this.playTime += hours;
+//   {
+//     name: "Sharlene Bush",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     gender: "female"
 //   },
-//   getInfo() {
-//     return `${this.username} has ${this.playTime} active hours!`;
+//   {
+//     name: "Elma Head",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//     gender: "female"
 //   },
-// };
-
-// const profile2 = {
-//   username: "Lena",
-//   playTime: 10,
-// };
-
-// profile2.changeUsername = profile.changeUsername;
-// profile2.updatePlayTime = profile.updatePlayTime;
-// profile2.getInfo = profile.getInfo;
-
-// console.log(profile2.getInfo());
-// console.log(profile.getInfo());
-
-// profile.updatePlayTime(-100);
-// profile2.updatePlayTime(100);
-// profile.changeUsername("Jac");
-// profile2.changeUsername("Lenochka");
-
-// console.log(profile2.getInfo());
-// console.log(profile.getInfo());
+//   {
+//     name: "Carey Barr",
+//     friends: ["Jordan Sampson", "Eddie Strong"],
+//     gender: "male"
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//     gender: "male"
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//     gender: "female"
+//   },
+//   {
+//     name: "Moore Hensley",
+//     friends: ["Sharron Pace"],
+//     gender: "male"
+//   }
+// ]
